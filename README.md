@@ -1,2 +1,2 @@
 # Chessboard-Gameboard-editor
-raylib Raygui Free Pascal, editor too create chessbord and gameboard
+raylib Raygui Free Pascal, editor too create chessbord and gameboard v.06
