@@ -28,8 +28,11 @@ begin
     ClearBackground(Leboard.ClearBackground);
 
     // Dessiner l'échiquier et les coordonnées
+    If Leboard.PlateauUni=false then                                     //test type plateau
+    DrawBoardalterne()
+    else
+    DrawBoarduni();
 
-    DrawBoard();
     DrawCoordinates();
     Gui();
     EndDrawing();

@@ -52,7 +52,8 @@ type
    spinnerEditHaut:boolean=false;
 
   procedure initBoard();
-  procedure DrawBoard();
+  procedure DrawBoardalterne();
+  procedure DrawBoarduni();
   procedure DrawCoordinates();
   procedure gui();
   implementation
@@ -60,9 +61,16 @@ type
   procedure gui();
 begin
         GuiLabel(RectangleCreate( 1500, 10, 140, 30 ), 'Plateau');              //
-        GuiSetStyle(SLIDER, SLIDER_PADDING, 2);
-        GuiToggleSlider(RectangleCreate( 1500, 50, 150, 25 ), 'UNI;Alterne', @toggleSliderActive);  //0 ou 1 dans toggleslideractive
-        GuiSetStyle(SLIDER, SLIDER_PADDING, 0);
+        //GuiSetStyle(SLIDER, SLIDER_PADDING, 2);
+        GuiToggleSlider(RectangleCreate( 1500, 50, 150, 25 ), 'UNI;Alterne', @toggleSliderActive);
+        If toggleSliderActive = 1  then
+            Leboard.PlateauUni:=false                         //alterné
+            else
+            Leboard.PlateauUni:=true;                            //uni
+
+
+        //0 ou 1 dans toggleslideractive
+        //GuiSetStyle(SLIDER, SLIDER_PADDING, 0);
 
         case1:=RectangleCreate(1500, 80, 20, 20);
          DrawRectanglerec(case1, leboard.Couleur1Case);                  // couleur1
@@ -162,7 +170,7 @@ end;
   end;
 
 
-  procedure DrawBoard();
+  procedure DrawBoardalterne();
   var
     i, j: integer;
     color: TColor;
@@ -182,6 +190,30 @@ end;
        begin
        DrawRectangle(i * largCase+DECAL_Largeur, j * hautCase+DECAL_Hauteur, largCase, hautCase, color);    // Dessiner la case
 
+       end;
+
+      end;
+    end;
+  end;
+
+    procedure DrawBoarduni();
+  var
+    i, j: integer;
+    color: TColor;
+  begin
+    // Dessiner l'échiquier
+    for i := 1 to leboard.NbreColonne do
+    begin
+      for j := 1 to leboard.Nbreligne do
+      begin
+      color := Leboard.Couleur1Case;
+
+
+       with leboard do
+       begin
+       DrawRectangle(i * largCase+DECAL_Largeur, j * hautCase+DECAL_Hauteur, largCase, hautCase, color);    // Dessiner la case
+       color := Leboard.Couleur2Case;
+       DrawRectangleLines(i * largCase+DECAL_Largeur, j * hautCase+DECAL_Hauteur, largCase, hautCase, color);
        end;
 
       end;
