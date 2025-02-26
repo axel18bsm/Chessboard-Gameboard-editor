@@ -1,5 +1,5 @@
 # Chessboard-Gameboard-editor
-raylib Raygui Free Pascal, editor too create chessbord and gameboard v.07
+raylib Raygui Free Pascal, editor to create chessboard and gameboard v.07
 
 photo case alternée pour jeu echec, dames, etc..
 
