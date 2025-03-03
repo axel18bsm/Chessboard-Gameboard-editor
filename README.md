@@ -18,5 +18,8 @@ Bien que tous ces éléménts sont dans la structure.
 
 ![image](https://github.com/user-attachments/assets/beecf1f5-2017-488e-b52b-607667594965)
 
+an example of chessboard with its regular notation
+
+![image](https://github.com/user-attachments/assets/a71eb4ff-ca5d-4b5e-af49-d66b082f48de)
 
 
