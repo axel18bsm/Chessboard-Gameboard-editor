@@ -16,4 +16,7 @@ les coordonnées on été rajoutées en haut et à gauche, numeriques ou alphabe
 Le système graphique a été revu, le board est dessiné par l 'id de la case et non plus par le numéro de colonne et de ligne.
 Bien que tous ces éléménts sont dans la structure.
 
+![image](https://github.com/user-attachments/assets/beecf1f5-2017-488e-b52b-607667594965)
+
+
 
