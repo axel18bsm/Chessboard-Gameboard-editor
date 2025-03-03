@@ -5,10 +5,6 @@ uses
   cmem,
   raylib,
   SysUtils, plateaumle,raygui;
-
-
-
-
 begin
 
 
@@ -28,12 +24,19 @@ begin
     ClearBackground(Leboard.ClearBackground);
 
     // Dessiner l'échiquier et les coordonnées
-    If Leboard.PlateauUni=false then                                     //test type plateau
-    DrawBoardalterne()
-    else
-    DrawBoarduni();
+    If Leboard.PlateauUni=false then
+       begin//test type plateau
+        majcouleur(false);                                                       // on remet à jour les couleurs
+        DrawBoardalterne();
+       end
 
-    DrawCoordinates();
+    else
+       begin
+        //majcouleur(true);
+        DrawBoarduni();                                                         //on remet à jour les couleurs
+       end;
+
+    if leboard.DrawCoord= true then DrawCoordinates();
     Gui();
     EndDrawing();
     if GuiButton(RectangleCreate( 1500, 480, 140, 30 ), 'Quitter')>0 then Break;
