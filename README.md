@@ -22,4 +22,12 @@ an example of chessboard with its regular notation
 
 ![image](https://github.com/user-attachments/assets/a71eb4ff-ca5d-4b5e-af49-d66b082f48de)
 
+La sauvegarde et le rechargement d'un ancien échiquier fonctionne. la sauvegarde crée 2 fichiers, un screenshot
+de l image, un fichier csv qui contient toutes les coordonées du tableau  et de ses couleurs, le vecteur central de la case.
+
+![image](https://github.com/user-attachments/assets/ab8df150-4bf8-46ec-b27d-eea2cb676fab)
+
+il reste à affiner les coordonnées.
+
+
 
