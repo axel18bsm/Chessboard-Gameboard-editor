@@ -1,5 +1,5 @@
 # Chessboard-Gameboard-Grid-editor
-raylib Raygui Free Pascal, editor to create chessboard and gameboard v.099
+Raylib Raygui Free Pascal Lazarus, editor to create chessboard and gameboard v.099
 
 # Functions:
 
@@ -42,7 +42,18 @@ can use it to detect the clic of your mouse by your program.
 
 you can use the data to know the square for collisions.
  
+# Installation :
 
+1) You create a directory in windows.
+2) put the raylib.dll and echiquier.exe files in this directory.
+3) Create in the main directory, a second one  with the name "gui_styles"
+4) in the last directory, put all files from the amber directory. (If you miss this step, it s not important, the gui takes the standard one)
+5)  That s all folks !
 
+The saved grids ans screenshots will be in the main directory with the names screenshot_xxx.png and echiquier_xxx.csv. 
+XXX are the same number.
 
+# Technically and new compilation :
+Use Lazarus and free Pascal, you must have the headers of raylib and raygui to compile. Headers from Guvacode (Thanks to him)
+You load the file.lpr and you play with the code.
 
