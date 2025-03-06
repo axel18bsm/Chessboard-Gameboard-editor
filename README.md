@@ -1,7 +1,14 @@
 # Chessboard-Gameboard-editor
-raylib Raygui Free Pascal, editor to create chessboard and gameboard v.08
+raylib Raygui Free Pascal, editor to create chessboard and gameboard v.099
 
-photo case alternée pour jeu echec, dames, etc..
+Functionalities:
+You can create plain square or alernate squares in the gameboard.
+You can update the  numbers of rows and columns.
+You can update the heigth and the width of the square ( 1 to 200 pixels).
+you can modify the colors : color number 1 is the color for plain square ou alternate squares.
+The color number 2 is the other color for the alternate squares, and to draw the grid for the plain square.
+
+ 
 
 ![image](https://github.com/user-attachments/assets/164b5ace-b99b-48d8-8de9-f3b480d07268)
 
