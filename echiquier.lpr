@@ -5,6 +5,8 @@ uses
   cmem,
   raylib,
   SysUtils, plateaumle,raygui;
+var
+csvFile: string;
 begin
 
 
@@ -39,15 +41,21 @@ begin
     if leboard.DrawCoord= true then DrawCoordinates();
     Gui();
     EndDrawing();
-    if GuiButton(RectangleCreate(1500, 450, 140, 30), 'Sauvegarder') > 0 then
+    if GuiButton(RectangleCreate(1500, 460, 140, 30), 'Sauvegarder') > 0 then
       SaveBoardAndScreenshot;
 
-    if GuiButton(RectangleCreate(1500, 480, 140, 30), 'Charger') > 0 then
+    if GuiButton(RectangleCreate(1500, 530, 140, 30), 'Charger') > 0 then
       begin
-      LoadBoardFromFile('echiquier_1.csv');  // Charger le dernier fichier (exemple)
+       if leboard.Largsauv>1 then
+         begin
+       csvFile := Format('echiquier_%d.csv', [leboard.Largsauv]);
+      LoadBoardFromFile(csvfile);  // charge le numero de fichier
       majechiquier();
-      end;
-    if GuiButton(RectangleCreate(1500, 510, 140, 30), 'Quitter') > 0 then
+          end;
+       End;
+
+
+    if GuiButton(RectangleCreate(1500, 580, 140, 30), 'Quitter') > 0 then
       Break;
   end;
 

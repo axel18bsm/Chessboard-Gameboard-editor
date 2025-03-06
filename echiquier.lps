@@ -8,7 +8,7 @@
       <Unit>
         <Filename Value="echiquier.lpr"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="80" Y="18"/>
+        <CursorPos X="6" Y="53"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
       </Unit>
@@ -18,15 +18,15 @@
         <UnitName Value="plateauMle"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="209"/>
-        <CursorPos X="75" Y="227"/>
+        <TopLine Value="65"/>
+        <CursorPos X="40" Y="92"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="c:\lazarus4\onlinepackagemanager\packages\Ray4Laz\source\extras\raygui.pas"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="306"/>
+        <TopLine Value="318"/>
         <CursorPos X="10" Y="601"/>
         <UsageCount Value="102"/>
         <Loaded Value="True"/>
@@ -44,136 +44,136 @@
         <EditorIndex Value="1"/>
         <TopLine Value="274"/>
         <CursorPos X="18" Y="269"/>
-        <UsageCount Value="67"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="raylib.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="9"/>
-        <UsageCount Value="3"/>
+        <UsageCount Value="1"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="496" TopLine="482"/>
+        <Caret Line="95" Column="21" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="497" TopLine="482"/>
+        <Caret Line="263" Column="81" TopLine="247"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="498" TopLine="497"/>
+        <Caret Line="95" TopLine="59"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="499" TopLine="493"/>
+        <Caret Line="114" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="500" TopLine="493"/>
+        <Caret Line="94" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="501" TopLine="493"/>
+        <Caret Line="95" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="502" TopLine="493"/>
+        <Caret Line="96" Column="71" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="503" TopLine="493"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="507" TopLine="493"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="508" TopLine="493"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="510" TopLine="493"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="511" TopLine="493"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="512" TopLine="493"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="513" TopLine="493"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="514" TopLine="493"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="515" TopLine="493"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="516" TopLine="502"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="517" TopLine="502"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="518" TopLine="502"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="519" TopLine="502"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="520" TopLine="502"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="521" TopLine="502"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="522" TopLine="502"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="523" TopLine="502"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="524" TopLine="502"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="525" TopLine="502"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="467" TopLine="466"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="573" TopLine="387"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
         <Filename Value="plateaumle.pas"/>
-        <Caret Line="399" Column="32" TopLine="391"/>
+        <Caret Line="99" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="echiquier.lpr"/>
-        <Caret Line="47" Column="16"/>
+        <Filename Value="plateaumle.pas"/>
+        <Caret Line="100" TopLine="83"/>
       </Position>
     </JumpHistory>
     <RunParams>

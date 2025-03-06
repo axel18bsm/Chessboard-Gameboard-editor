@@ -15,6 +15,9 @@ type
     NbreColonne:integer;
     LargCase:Integer;
     HautCase:Integer;
+    Largsauv:Integer;
+    Largsauvmax:Integer;
+    Largsauvmin:Integer;
     Couleur1Case:TColor;
     Couleur2Case:TColor;
     PlateauUni:boolean;
@@ -54,9 +57,9 @@ type
   Var
     Leboard:Tplateau;
     board: array of TCase; // va permettre de stocker toutes les cases, on ne connait pas le nombre.
-    toggleSliderActive: integer =1 ;
+    toggleSliderActive,toggleSliderActiveGauche,toggleSliderActivehaut: integer  ;
     statustext:pchar ='Info';
-    ButtonExit,colorPickerBounds,case1, case2, clearbg,alphaSliderBounds,ligneBounds,colonneBounds,hautCasebounds,largCasebounds :TRectangle;
+    ButtonExit,colorPickerBounds,case1, case2, clearbg,alphaSliderBounds,ligneBounds,colonneBounds,hautCasebounds,largCasebounds, checkbounds :TRectangle;
     colorSelected: TColor;
     mousePos: TVector2;
    colorText: string;
@@ -66,6 +69,9 @@ type
    valueBoxEditligne:boolean =false;
    spinnerEditlarg:boolean=false;
    spinnerEditHaut:boolean=false;
+   spinnerEditSauv:Boolean=false;
+  a3selected:Boolean=true;
+  showcoord:boolean=false;
 
   procedure initBoard();
   procedure DrawBoardalterne();
@@ -76,7 +82,38 @@ type
   procedure majEchiquier;
   procedure SaveBoardAndScreenshot;
   procedure LoadBoardFromFile(const FileName: string);
+  procedure comptesauvegarde;
   implementation
+
+  procedure comptesauvegarde();
+   var
+  screenshotFile, csvFile: string;
+  fileNum, i: Integer;
+  F: TextFile;
+
+begin
+  fileNum := 1;
+
+  repeat
+    screenshotFile := Format('screenshot_%d.png', [fileNum]);
+    Inc(fileNum);
+  until not FileExists(pchar(screenshotFile));
+       Dec(filenum); Dec(filenum);
+    if filenum>1 then
+    begin
+       leboard.Largsauvmin:=1;
+       leboard.Largsauvmax:=filenum;
+       Leboard.Largsauv:=filenum;
+    end
+    else
+    begin
+       leboard.Largsauvmin:=0;
+       leboard.Largsauvmax:=0;
+       Leboard.Largsauv:=filenum;
+    end;
+  end;
+
+
 
   procedure majcouleur(typeechiquier: boolean);
   var i: Integer;
@@ -137,7 +174,7 @@ begin
 begin
 
         GuiLabel(RectangleCreate( 1500, 10, 140, 30 ), 'Plateau');              //
-        //GuiSetStyle(SLIDER, SLIDER_PADDING, 2);
+        GuiSetStyle(SLIDER, SLIDER_PADDING, 2);
         GuiToggleSlider(RectangleCreate( 1500, 50, 150, 25 ), 'UNI;Alterne', @toggleSliderActive);
         If toggleSliderActive = 1  then
             Leboard.PlateauUni:=false                         //alterné
@@ -231,10 +268,35 @@ begin
         then
         begin
            spinnerEditlarg := not spinnerEditlarg;
-           majEchiquier()
         end;
 
 
+          if GuiSpinner(RectangleCreate(1500, 500, 80, 30), '# Sauvegarde(s)', @leboard.Largsauv, leboard.Largsauvmin, leboard.Largsauvmax, spinnerEditSauv) <> 0 //nombre de sauvegarde.
+        then
+        begin
+           spinnerEditSauv := not spinnerEditSauv;
+                end;
+
+         checkbounds:=RectangleCreate(1500,380,20,20);
+          if GuiCheckBox(checkbounds, 'Sélection Coordonnées', @A3selected)>0 then
+          showcoord:=true
+          else
+          showcoord:=false;
+        GuiSetStyle(TEXTBOX, TEXT_ALIGNMENT, TEXT_ALIGN_CENTER);
+
+        GuiSetStyle(SLIDER, SLIDER_PADDING, 2);
+        GuiToggleSlider(RectangleCreate( 1500, 405, 140, 25 ), 'Gauche 123;Gauche ABC', @toggleSliderActiveGauche);
+        If toggleSliderActiveGauche = 1  then
+            Leboard.A1:=true                         //alterné
+            else
+            Leboard.A1:=false;
+
+        GuiSetStyle(SLIDER, SLIDER_PADDING, 2);
+        GuiToggleSlider(RectangleCreate( 1500, 430, 140, 25 ), 'Haut 123;Haut ABC', @toggleSliderActiveHaut);
+        If toggleSliderActiveHaut = 1  then
+            Leboard.A2:=true                         //alterné
+            else
+            Leboard.A2:=false;
 
     //       // panel couleur
 
@@ -253,6 +315,7 @@ end;
     NbreColonne:=6 ;
     hautCase:=SQUARE_SIZE_heigth;
     largCase:=SQUARE_SIZE_width;
+    Largsauv:=0;
     Couleur1Case:=WHITE;
     Couleur2Case:=black;
     ClearBackground:=GRAY;
@@ -263,14 +326,16 @@ end;
     DrawCoord:=true;
     boardWidth := NbreColonne * SQUARE_SIZE_heigth;
     boardHeight := NbreLigne * SQUARE_SIZE_width;
-    offsetX :=40;// ( SCREEN_WIDTH - boardWidth) div 2;
-    offsetY :=40;// (screen_Height - boardHeight) div 2;
+    offsetX :=60;// ( SCREEN_WIDTH - boardWidth) div 2;
+    offsetY :=60;// (screen_Height - boardHeight) div 2;
     nbrecase:=NbreLigne*NbreColonne;
    end;
       colorSelected:=red;
       colorSelected.a:=255;
 
-
+    toggleSliderActive:=1;
+    toggleSliderActivehaut:=1;
+    toggleSlideractivegauche:=1;
 
   SetLength(board, Leboard.nbrecase);
 
@@ -294,12 +359,14 @@ begin
 
 
 
+
    if ((board[i].ligne + board[i].colonne) mod 2 = 0) then
     board[i].color1 := leboard.Couleur1Case
   else
     board[i].color1 := leboard.Couleur2Case;
    end;
 
+  comptesauvegarde();                               // on compte les fichiers de sauvegarde !
 
   board[i].alpha := 1.0;
 end;
@@ -346,8 +413,10 @@ var
   CoordText: ansistring;
   TextX, TextY: Integer;
 begin
-  with Leboard do
-  begin
+if A3selected =true then
+   begin
+        with Leboard do
+             begin
     // 1. Coordonnées verticales (à gauche) : lignes de bas en haut
     for i := 0 to NbreLigne - 1 do
     begin
@@ -359,7 +428,7 @@ begin
         CoordText := IntToStr(i + 1);
 
       // Position à gauche de l'échiquier
-      TextX := offsetX - 20; // Un peu à gauche du board
+      TextX := offsetX - 30; // Un peu à gauche du board
       TextY := offsetY + (NbreLigne - 1 - i) * HautCase + HautCase div 2 - 10; // Centré verticalement
       DrawText(PChar(CoordText), TextX, TextY, 20, LIGHTGRAY);
     end;
@@ -376,11 +445,13 @@ begin
 
       // Position au-dessus de l'échiquier
       TextX := offsetX + i * LargCase + LargCase div 2 - 10; // Centré horizontalement
-      TextY := offsetY - 20; // Au-dessus du board
+      TextY := offsetY - 25; // Au-dessus du board
       DrawText(PChar(CoordText), TextX, TextY, 20, LIGHTGRAY);
     end;
   end;
-end;
+
+ end;
+End;
 
  procedure SaveBoardAndScreenshot;
 var
@@ -422,6 +493,7 @@ begin
       WriteLn('Erreur lors de la sauvegarde CSV : ', E.Message);
     end;
   end;
+  comptesauvegarde();
 end;
 
 procedure LoadBoardFromFile(const FileName: string);
