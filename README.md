@@ -50,10 +50,11 @@ you can use the data to know the square for collisions.
 4) in the last directory, put all files from the amber directory. (If you miss this step, it s not important, the gui takes the standard one)
 5)  That s all folks !
 
-The saved grids ans screenshots will be in the main directory with the names screenshot_xxx.png and echiquier_xxx.csv. 
+The saved grids and screenshots will be in the main directory with the names screenshot_xxx.png and echiquier_xxx.csv. 
 XXX are the same number.
 
 # Technically and new compilation :
 Use Lazarus and free Pascal, you must have the headers of raylib and raygui to compile. Headers from Guvacode (Thanks to him)
 You load the file.lpr and you play with the code.
+The application are in a window of  SCREEN_WIDTH = 1680; SCREEN_HEIGHT = 1050;
 
